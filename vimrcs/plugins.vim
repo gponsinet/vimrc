@@ -16,11 +16,29 @@ call plug#begin('~/.vim/plugins')
     " Tabline
     Plug 'vim-airline/vim-airline'
 
+    " Javscript
+    Plug 'pangloss/vim-javascript'
+
+    " ES7
+    " Plug 'kern/vim-es7'
+
+    " JSX
+    Plug 'mxw/vim-jsx'
+
+    " HTML5
+    " Plug 'othree/html5.vim'
+
+    " Prettier
+    Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
+
     " VSCode +Dark Theme
     Plug 'tomasiser/vim-code-dark'
 
     " ES6 Scheme for neovim
     Plug 'mhartington/oceanic-next'
+
+    " Nova Theme
+    Plug 'trevordmiller/nova-vim'
 
     " Asynchronous Lint Engine
     Plug 'w0rp/ale'
@@ -54,27 +72,24 @@ call plug#begin('~/.vim/plugins')
 
 call plug#end()
 
-
 """"""""""""""""""""""""""""""
 " => Ale
 """"""""""""""""""""""""""""""
 let g:ale_sign_error = '>>'
 let g:ale_sign_warning = '--'
-
+let g:ale_lint_on_text_changed = 1
+let g:ale_fix_on_save = 1
 let g:ale_linters = {
 \   'javascript': ['eslint'],
 \}
-
 let g:ale_fixers = {
-\   'javascript': ['eslint'],
+\   'javascript': ['prettier-eslint'],
 \}
-let g:ale_fix_on_save = 1
-
 
 """"""""""""""""""""""""""""""
-" => OceanicNext
+" => Javascript
 """"""""""""""""""""""""""""""
-colorscheme OceanicNext
+let g:javascript_plugin_flow = 1
 
 
 """"""""""""""""""""""""""""""
@@ -82,11 +97,9 @@ colorscheme OceanicNext
 """"""""""""""""""""""""""""""
 colorscheme codedark
 
-
 """"""""""""""""""""""""""""""
 " => Airline
 """"""""""""""""""""""""""""""
-let g:airline_theme = 'oceanicnext'
 let g:airline_theme = 'codedark'
 
 
@@ -96,8 +109,7 @@ let g:airline_theme = 'codedark'
 let g:ctrlp_working_path_mode = 0
 
 let g:ctrlp_map = '<c-f>'
-map <leader>j :CtrlP<cr>
-map <c-b> :CtrlPBuffer<cr>
+map <C-p> :CtrlP<cr>
 
 let g:ctrlp_max_height = 20
 let g:ctrlp_custom_ignore = 'node_modules\|^\.DS_Store\|^\.git\|^\.coffee'
@@ -138,9 +150,9 @@ VAMActivate vim-snippets snipmate
 """"""""""""""""""""""""""""""
 " => CtrlSF
 """"""""""""""""""""""""""""""
-nmap     <C-F>f <Plug>CtrlSFPrompt
-vmap     <C-F>f <Plug>CtrlSFVwordPath
-vmap     <C-F>F <Plug>CtrlSFVwordExec
+"nmap     <C-S-f> <Plug>CtrlSFPrompt
+"vmap     <C-S-f> <Plug>CtrlSFVwordPath
+"vmap     <C-S-F> <Plug>CtrlSFVwordExec
 "nmap     <C-F>n <Plug>CtrlSFCwordPath
 "nmap     <C-F>p <Plug>CtrlSFPwordPath
 "nnoremap <C-F>o :CtrlSFOpen<CR>
@@ -152,14 +164,12 @@ vmap     <C-F>F <Plug>CtrlSFVwordExec
 " => Nerd Tree
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:NERDTreeWinPos = "left"
-let NERDTreeShowHidden=0
+let NERDTreeShowHidden=1
 let NERDTreeIgnore = ['\.pyc$', '__pycache__']
 let g:NERDTreeWinSize=50
-map <D-S-e> :NERDTreeToggle<cr>
-vmap <D-S-e> :NERDTreeToggle<cr>
-nmap <D-S-e> :NERDTreeToggle<cr>
-map <leader>nb :NERDTreeFromBookmark<Space>
-map <leader>nf :NERDTreeFind<cr>
+map <C-e> :NERDTreeToggle<cr>
+vmap <C-e> :NERDTreeToggle<cr>
+nmap <C-e> :NERDTreeToggle<cr>
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -190,3 +200,4 @@ nnoremap <silent> <leader>z :Goyo<cr>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:gitgutter_enabled=1
 nnoremap <silent> <leader>d :GitGutterToggle<cr>
+

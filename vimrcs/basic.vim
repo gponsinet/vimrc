@@ -69,6 +69,10 @@ command W w !sudo tee % > /dev/null
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => VIM user interface
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Disable Folding
+set nofoldenable
+
+
 " Activate Mouse
 set mouse=a
 
