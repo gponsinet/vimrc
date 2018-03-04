@@ -1,9 +1,11 @@
 #!/bin/sh
 set -e
 
-curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
-    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+brew install ack python python3 mono go rust caskroom/cask/java yarn
+yarn global add typescript
 
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vimrc
 
 echo 'source ~/.vim/vimrcs/basic.vim
 source ~/.vim/vimrcs/filetypes.vim

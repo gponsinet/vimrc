@@ -46,6 +46,9 @@ call plug#begin('~/.vim/plugins')
     " Find file with Ctrl+P
     Plug 'ctrlpvim/ctrlp.vim'
 
+    " ACK
+    Plug 'mileszs/ack.vim'
+
     " Search & Replace String with Ctrl+Shift+F
     Plug 'dyng/ctrlsf.vim'
 
@@ -150,6 +153,10 @@ VAMActivate vim-snippets snipmate
 """"""""""""""""""""""""""""""
 " => CtrlSF
 """"""""""""""""""""""""""""""
+let g:ctrlsf_ackprg = 'ack'
+
+nmap      <C-F> :CtrlSF<space>
+vmap      <C-F> :CtrlSF<space><C-R>"
 "nmap     <C-S-f> <Plug>CtrlSFPrompt
 "vmap     <C-S-f> <Plug>CtrlSFVwordPath
 "vmap     <C-S-F> <Plug>CtrlSFVwordExec
@@ -200,4 +207,7 @@ nnoremap <silent> <leader>z :Goyo<cr>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:gitgutter_enabled=1
 nnoremap <silent> <leader>d :GitGutterToggle<cr>
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set nofoldenable
 
