@@ -1,9 +1,11 @@
-#!/bin/sh
+#!/bin/bash
 set -e
 
-brew install ack python python3 mono go rust caskroom/cask/java yarn
+# Dependencies
+brew install neovim ack python python3 mono go rust caskroom/cask/java yarn
 yarn global add typescript
 
+# Plugins
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vimrc
 
@@ -18,4 +20,19 @@ vim -c PlugInstall 2>/dev/null
 cd ~/.vim/plugins/youcompleteme
 ./install.py --all
 
+
+# NeoVim
+ln -s $(where vim) /usr/local/bin/nv
+
+echo 'set runtimepath^=~/.vim runtimepath+=~/.vim/after
+let &packpath = &runtimepath
+source ~/.vimrc
+' > ~/.config/nvim/init.vim
+
+mkdir -p ~/.config/nvim
+
+sudo easy_install pip
+pip install --user --upgrade neovim
+
+# Done
 echo "Installed the Best VIM Configuration Ever! Enjoy :-)"

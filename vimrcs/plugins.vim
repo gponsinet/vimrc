@@ -7,7 +7,7 @@
 
 """"""""""""""""""""""""""""""
 " => Installation
-""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 call plug#begin('~/.vim/plugins')
 
     " Addon Manager
@@ -52,6 +52,9 @@ call plug#begin('~/.vim/plugins')
     " Search & Replace String with Ctrl+Shift+F
     Plug 'dyng/ctrlsf.vim'
 
+    " Multiple Cursors
+    Plug 'terryma/vim-multiple-cursors'
+
     " Nerd Tree
     Plug 'scrooloose/nerdtree'
 
@@ -75,9 +78,9 @@ call plug#begin('~/.vim/plugins')
 
 call plug#end()
 
-""""""""""""""""""""""""""""""
-" => Ale
-""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Async Lint Error
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:ale_sign_error = '>>'
 let g:ale_sign_warning = '--'
 let g:ale_lint_on_text_changed = 1
@@ -89,26 +92,28 @@ let g:ale_fixers = {
 \   'javascript': ['prettier-eslint'],
 \}
 
-""""""""""""""""""""""""""""""
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Javascript
-""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:javascript_plugin_flow = 1
 
 
-""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => VSCode +Dark
-""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 colorscheme codedark
 
-""""""""""""""""""""""""""""""
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Airline
-""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:airline_theme = 'codedark'
 
 
-""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => CTRL-P
-""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:ctrlp_working_path_mode = 0
 
 let g:ctrlp_map = '<c-f>'
@@ -117,9 +122,10 @@ map <C-p> :CtrlP<cr>
 let g:ctrlp_max_height = 20
 let g:ctrlp_custom_ignore = 'node_modules\|^\.DS_Store\|^\.git\|^\.coffee'
 
-""""""""""""""""""""""""""""""
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Addon Manager
-""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set nocompatible | filetype indent plugin on | syn on
 fun! SetupVAM()
   let c = get(g:, 'vim_addon_manager', {})
@@ -144,19 +150,19 @@ endfun
 call SetupVAM()
 
 
-""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Snippets
-"""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 VAMActivate vim-snippets snipmate
 
 
-""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => CtrlSF
-""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:ctrlsf_ackprg = 'ack'
 
-nmap      <C-F> :CtrlSF<space>
-vmap      <C-F> :CtrlSF<space><C-R>"
+nnoremap  <C-F> :CtrlSF<space>
+vnoremap  <C-F> :CtrlSF<space><C-R>"
 "nmap     <C-S-f> <Plug>CtrlSFPrompt
 "vmap     <C-S-f> <Plug>CtrlSFVwordPath
 "vmap     <C-S-F> <Plug>CtrlSFVwordExec
@@ -165,6 +171,16 @@ vmap      <C-F> :CtrlSF<space><C-R>"
 "nnoremap <C-F>o :CtrlSFOpen<CR>
 "nnoremap <C-F>t :CtrlSFToggle<CR>
 "inoremap <C-F>t <Esc>:CtrlSFToggle<CR>
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" =>  Multiple Cursors
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:multi_cursor_use_default_mapping=0
+let g:multi_cursor_next_key='<C-n>'
+let g:multi_cursor_prev_key='<C-p>'
+let g:multi_cursor_skip_key='<C-x>'
+let g:multi_cursor_quit_key='<Esc>'
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -207,7 +223,3 @@ nnoremap <silent> <leader>z :Goyo<cr>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:gitgutter_enabled=1
 nnoremap <silent> <leader>d :GitGutterToggle<cr>
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-set nofoldenable
-
