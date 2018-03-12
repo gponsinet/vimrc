@@ -10,6 +10,9 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 call plug#begin('~/.vim/plugins')
 
+    " Colorizer
+    Plug 'chrisbra/colorizer'
+
     " Addon Manager
     Plug 'marcweber/vim-addon-manager'
 
@@ -20,13 +23,23 @@ call plug#begin('~/.vim/plugins')
     Plug 'pangloss/vim-javascript'
 
     " ES7
-    " Plug 'kern/vim-es7'
+    Plug 'kern/vim-es7'
 
     " JSX
-    Plug 'mxw/vim-jsx'
+    Plug 'maxmellon/vim-jsx-pretty'
+    " Plug 'mxw/vim-jsx'
 
     " HTML5
     " Plug 'othree/html5.vim'
+
+    " JS
+    "Plug 'othree/javascript-libraries-syntax.vim'
+
+    " yajs
+    Plug 'othree/yajs.vim'
+
+    " ES
+    Plug 'othree/es.next.syntax.vim'
 
     " Prettier
     Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
@@ -43,8 +56,14 @@ call plug#begin('~/.vim/plugins')
     " Asynchronous Lint Engine
     Plug 'w0rp/ale'
 
+    " Syntastic
+    " Plug 'vim-syntastic/syntastic'
+
     " Find file with Ctrl+P
     Plug 'ctrlpvim/ctrlp.vim'
+
+    " AG
+    Plug 'rking/ag.vim'
 
     " ACK
     Plug 'mileszs/ack.vim'
@@ -79,15 +98,20 @@ call plug#begin('~/.vim/plugins')
 call plug#end()
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => JS
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:used_javascript_libs = 'react'
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Async Lint Error
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:ale_sign_error = '>>'
 let g:ale_sign_warning = '--'
 let g:ale_lint_on_text_changed = 1
 let g:ale_fix_on_save = 1
-let g:ale_linters = {
-\   'javascript': ['eslint'],
-\}
+let g:ale_javascript_eslint_use_global = 1
+let g:ale_javascript_eslint_executable = 'eslint_d'
 let g:ale_fixers = {
 \   'javascript': ['prettier-eslint'],
 \}
@@ -116,7 +140,7 @@ let g:airline_theme = 'codedark'
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:ctrlp_working_path_mode = 0
 
-let g:ctrlp_map = '<c-f>'
+let g:ctrlp_map = '<c-n>'
 map <C-p> :CtrlP<cr>
 
 let g:ctrlp_max_height = 20
@@ -159,7 +183,7 @@ VAMActivate vim-snippets snipmate
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => CtrlSF
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:ctrlsf_ackprg = 'ack'
+let g:ctrlsf_ackprg = 'ag'
 
 nnoremap  <C-F> :CtrlSF<space>
 vnoremap  <C-F> :CtrlSF<space><C-R>"

@@ -3,7 +3,7 @@ set -e
 
 # Dependencies
 brew install neovim ack python python3 mono go rust caskroom/cask/java yarn
-yarn global add typescript
+yarn global add typescript eslint_d prettier-eslint-cli
 
 # Plugins
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs \

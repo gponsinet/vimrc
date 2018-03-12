@@ -71,7 +71,13 @@ command W w !sudo tee % > /dev/null
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Disable Folding
 set nofoldenable
+set foldmethod=marker
 
+" Vertical Split on the right side
+set splitright
+
+" Horizontal split on the bottom
+set splitbelow
 
 " Activate Mouse
 set mouse=a
