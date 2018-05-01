@@ -10,6 +10,12 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 call plug#begin('~/.vim/plugins')
 
+    " GoLang
+    Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+
+    " Ctags
+    Plug 'craigemery/vim-autotag'
+
     " Colorizer
     Plug 'chrisbra/colorizer'
 
@@ -23,7 +29,7 @@ call plug#begin('~/.vim/plugins')
     Plug 'pangloss/vim-javascript'
 
     " ES7
-    Plug 'kern/vim-es7'
+    " Plug 'kern/vim-es7'
 
     " JSX
     Plug 'maxmellon/vim-jsx-pretty'
@@ -34,6 +40,9 @@ call plug#begin('~/.vim/plugins')
 
     " JS
     "Plug 'othree/javascript-libraries-syntax.vim'
+
+    " Auto import JS
+    Plug 'trotzig/import-js'
 
     " yajs
     Plug 'othree/yajs.vim'
@@ -96,6 +105,41 @@ call plug#begin('~/.vim/plugins')
     Plug 'airblade/vim-gitgutter'
 
 call plug#end()
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Ctags
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:autotagExcludeSuffixes = [
+\ '.git',
+\ '.svn',
+\ '.hg',
+\ 'min',
+\ 'vendor',
+\ '\*.min.\*',
+\ '\*.map',
+\ '\*.swp',
+\ '\*.bak',
+\ '\*.pyc',
+\ '\*.class',
+\ '\*.sln',
+\ '\*.Master',
+\ '\*.csproj',
+\ '\*.csproj.user',
+\ '\*.cache',
+\ '\*.dll',
+\ '\*.pdb',
+\ 'tags',
+\ 'cscope.\*',
+\ '\*.tar.\*',
+\ 'node_modules',
+\ 'bower_components',
+\ 'dist',
+\ 'test',
+\ 'tests',
+\ '.tmp',
+\ '*bundle.*'
+\]
+
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => JS
@@ -217,12 +261,6 @@ let g:NERDTreeWinSize=50
 map <C-e> :NERDTreeToggle<cr>
 vmap <C-e> :NERDTreeToggle<cr>
 nmap <C-e> :NERDTreeToggle<cr>
-
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => vim-multiple-cursors
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:multi_cursor_next_key="\<C-d>"
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

@@ -2,3 +2,4 @@ autoload/
 addons/
 plugins/
 .DS_Store
+.netrwhist
