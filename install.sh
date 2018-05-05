@@ -2,8 +2,10 @@
 set -e
 
 # Dependencies
-brew install neovim ack python python3 mono go rust caskroom/cask/java yarn ctags
+brew install ctags neovim ack python python3 mono go rust caskroom/cask/java yarn ctags
 yarn global add typescript eslint_d prettier-eslint-cli
+## Fix autotag import weakref error
+brew remove python@2 --ignore-dependencies
 
 # Plugins
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
