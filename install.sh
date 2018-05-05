@@ -7,7 +7,7 @@ yarn global add typescript eslint_d prettier-eslint-cli
 
 # Plugins
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
-    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vimrc
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 echo 'source ~/.vim/vimrcs/basic.vim
 source ~/.vim/vimrcs/filetypes.vim
