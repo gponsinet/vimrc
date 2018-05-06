@@ -2,7 +2,7 @@
 set -e
 
 # Dependencies
-brew install ctags neovim ack python python3 mono go rust caskroom/cask/java yarn ctags
+brew install ctags neovim ack python python3 mono go rust caskroom/cask/java yarn ctags ag
 yarn global add typescript eslint_d prettier-eslint-cli
 
 # Plugins
