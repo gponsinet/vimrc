@@ -1,11 +1,11 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Important:
-"       This requries that you install https://github.com/gponsinet/vimrc !
+" This requries that you install https://github.com/gponsinet/vimrc !
 "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 
-""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Installation
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 call plug#begin('~/.vim/plugins')
@@ -24,6 +24,7 @@ call plug#begin('~/.vim/plugins')
 
     " Tabline
     Plug 'vim-airline/vim-airline'
+    Plug 'vim-airline/vim-airline-themes'
 
     " Javscript
     Plug 'pangloss/vim-javascript'
@@ -52,6 +53,9 @@ call plug#begin('~/.vim/plugins')
 
     " Prettier
     Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
+
+    " Solarized Themes
+    Plug 'altercation/vim-colors-solarized'
 
     " VSCode +Dark Theme
     Plug 'tomasiser/vim-code-dark'
@@ -171,12 +175,15 @@ let g:javascript_plugin_flow = 1
 " => VSCode +Dark
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 colorscheme codedark
-
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Airline
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:airline_theme = 'codedark'
+
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Solarized Dark
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"colorscheme solarized
+"set background=dark
+"let g:airline_theme = 'solarized'
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

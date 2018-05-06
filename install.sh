@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/zsh
 set -e
 
 # Dependencies
@@ -18,21 +18,22 @@ source ~/.vim/vimrcs/extended.vim
 vim -c PlugInstall 2>/dev/null
 
 cd ~/.vim/plugins/youcompleteme
+git submodule update --init --recursive
 ./install.py --all
 
 
 # NeoVim
-ln -s $(where vim) /usr/local/bin/nv
+mkdir -p ~/.config/nvim
 
 echo 'set runtimepath^=~/.vim runtimepath+=~/.vim/after
 let &packpath = &runtimepath
 source ~/.vimrc
 ' > ~/.config/nvim/init.vim
 
-mkdir -p ~/.config/nvim
-
 sudo easy_install pip
 pip install --user --upgrade neovim
+
+ln -s $(where nvim) $(dirname $(where nvim))/nv
 
 # Done
 echo "Installed the Best VIM Configuration Ever! Enjoy :-)"
