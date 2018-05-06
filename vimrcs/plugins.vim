@@ -291,4 +291,5 @@ nnoremap <silent> <leader>z :Goyo<cr>
 " => Git gutter (Git diff)
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:gitgutter_enabled=1
+let g:gitgutter_highlight_lines = 1
 nnoremap <silent> <leader>d :GitGutterToggle<cr>
