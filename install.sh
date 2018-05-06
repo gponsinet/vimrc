@@ -21,6 +21,7 @@ cd ~/.vim/plugins/youcompleteme
 git submodule update --init --recursive
 ./install.py --all
 
+mkdir -p ~/.vim/undo
 
 # NeoVim
 mkdir -p ~/.config/nvim
