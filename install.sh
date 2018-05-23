@@ -33,7 +33,8 @@ source ~/.vimrc
 
 sudo easy_install pip
 easy_install six
-pip install --user --upgrade neovim
+pip2 install --user --upgrade neovim
+pip3 install --user --upgrade neovim
 
 ln -s $(where nvim) $(dirname $(where nvim))/nv
 
