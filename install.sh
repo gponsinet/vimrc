@@ -38,5 +38,7 @@ pip3 install --user --upgrade neovim
 
 ln -s $(where nvim) $(dirname $(where nvim))/nv
 
+git config --global core.editor nvim
+
 # Done
 echo "Installed the Best VIM Configuration Ever! Enjoy :-)"
