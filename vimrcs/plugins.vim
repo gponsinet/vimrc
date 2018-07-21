@@ -9,6 +9,11 @@
 " => Installation
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 call plug#begin('~/.vim/plugins')
+    " Graphql
+    Plug 'jparise/vim-graphql'
+
+    " Swift
+    Plug 'keith/swift.vim'
 
     " GoLang
     Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
@@ -91,7 +96,7 @@ call plug#begin('~/.vim/plugins')
     Plug 'scrooloose/nerdtree'
 
     " Auto complete
-    Plug 'valloric/youcompleteme'
+    Plug 'valloric/youcompleteme', { 'do': './install.py --all' }
 
     " Snippets
     Plug 'honza/vim-snippets'
@@ -107,6 +112,10 @@ call plug#begin('~/.vim/plugins')
 
     " Show Git Info
     Plug 'airblade/vim-gitgutter'
+
+    " Eslint
+    Plug 'eslint/eslint'
+
 
 call plug#end()
 
@@ -169,6 +178,12 @@ let g:ale_fixers = {
 " => Javascript
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:javascript_plugin_flow = 1
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Golang
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:go_fmt_command = "goimports"
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -293,3 +308,8 @@ nnoremap <silent> <leader>z :Goyo<cr>
 let g:gitgutter_enabled=1
 let g:gitgutter_highlight_lines = 0
 nnoremap <silent> <leader>d :GitGutterToggle<cr>
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Swift
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:syntastic_swift_checkers = ['swiftpm', 'swiftlint']
