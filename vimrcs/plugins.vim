@@ -9,6 +9,13 @@
 " => Installation
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 call plug#begin('~/.vim/plugins')
+
+    " Editor Config
+    Plug 'editorconfig/editorconfig-vim'
+
+    " Fugitive
+    Plug 'tpope/vim-fugitive'
+
     " Graphql
     Plug 'jparise/vim-graphql'
 
@@ -118,6 +125,13 @@ call plug#begin('~/.vim/plugins')
 
 
 call plug#end()
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Editor Config
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:EditorConfig_exclude_patterns = ['fugitive://.*', 'scp://.*']
+
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Ctags
