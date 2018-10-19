@@ -73,6 +73,9 @@ command W w !sudo tee % > /dev/null
 set nofoldenable
 set foldmethod=marker
 
+" cursor horizontal line
+set cursorline
+
 " Vertical Split on the right side
 set splitright
 

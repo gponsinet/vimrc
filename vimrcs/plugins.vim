@@ -72,6 +72,12 @@ call plug#begin('~/.vim/plugins')
     " VSCode +Dark Theme
     Plug 'tomasiser/vim-code-dark'
 
+    " Glow in the dark
+    Plug 'kenwheeler/glow-in-the-dark-gucci-shark-bites-vim'
+
+		" Challenger deep
+		Plug 'challenger-deep-theme/vim', { 'as': 'challenger-deep' }
+
     " ES6 Scheme for neovim
     Plug 'mhartington/oceanic-next'
 
@@ -204,7 +210,22 @@ let g:go_fmt_command = "goimports"
 " => VSCode +Dark
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 colorscheme codedark
-let g:airline_theme = 'codedark'
+set g:airline_theme = 'codedark'
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Glow in the +Dark
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" colorscheme sharkbites
+" set background=dark
+" let g:airline_theme = 'sharkbites'
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Challenger Deep
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" colorscheme challenger_deep
+" set g:airline_theme = 'codedark'
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
