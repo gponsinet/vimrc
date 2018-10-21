@@ -38,6 +38,9 @@ call plug#begin('~/.vim/plugins')
     Plug 'vim-airline/vim-airline'
     Plug 'vim-airline/vim-airline-themes'
 
+    " JSON
+    Plug 'leshill/vim-json'
+
     " Javscript
     Plug 'pangloss/vim-javascript'
 
@@ -45,8 +48,8 @@ call plug#begin('~/.vim/plugins')
     " Plug 'kern/vim-es7'
 
     " JSX
-    Plug 'maxmellon/vim-jsx-pretty'
-    " Plug 'mxw/vim-jsx'
+    " Plug 'maxmellon/vim-jsx-pretty'
+    Plug 'mxw/vim-jsx'
 
     " HTML5
     " Plug 'othree/html5.vim'
@@ -58,10 +61,10 @@ call plug#begin('~/.vim/plugins')
     Plug 'trotzig/import-js'
 
     " yajs
-    Plug 'othree/yajs.vim'
+    " Plug 'othree/yajs.vim'
 
     " ES
-    Plug 'othree/es.next.syntax.vim'
+    " Plug 'othree/es.next.syntax.vim'
 
     " Prettier
     Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
@@ -178,6 +181,9 @@ let g:autotagExcludeSuffixes = [
 " => JS
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:used_javascript_libs = 'react'
+let g:javascript_plugin_flow = 1
+let g:jsx_ext_required = 0
+
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -198,6 +204,7 @@ let g:ale_fixers = {
 " => Javascript
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:javascript_plugin_flow = 1
+autocmd BufWritePost * :ImportJSFix
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -210,7 +217,7 @@ let g:go_fmt_command = "goimports"
 " => VSCode +Dark
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 colorscheme codedark
-set g:airline_theme = 'codedark'
+" set g:airline_theme = 'codedark'
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -348,3 +355,4 @@ nnoremap <silent> <leader>d :GitGutterToggle<cr>
 " => Swift
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:syntastic_swift_checkers = ['swiftpm', 'swiftlint']
+
