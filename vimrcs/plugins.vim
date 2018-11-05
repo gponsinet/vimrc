@@ -10,6 +10,9 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 call plug#begin('~/.vim/plugins')
 
+    " Objective C
+    Plug 'b4winckler/vim-objc'
+
     " Editor Config
     Plug 'editorconfig/editorconfig-vim'
 
@@ -58,7 +61,8 @@ call plug#begin('~/.vim/plugins')
     "Plug 'othree/javascript-libraries-syntax.vim'
 
     " Auto import JS
-    Plug 'trotzig/import-js'
+    " Plug 'trotzig/import-js
+    Plug 'Galooshi/vim-import-js', { 'do': 'yarn global add import-js' }
 
     " yajs
     " Plug 'othree/yajs.vim'
@@ -183,7 +187,13 @@ let g:autotagExcludeSuffixes = [
 let g:used_javascript_libs = 'react'
 let g:javascript_plugin_flow = 1
 let g:jsx_ext_required = 0
-
+" TODO: import on save
+" fun! ImportJS()
+  " call :ImportJSFix
+" endfun
+" if has("autocmd")
+"      autocmd BufWritePre *.js :call ImportJS()
+" endif
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -199,12 +209,6 @@ let g:ale_fixers = {
 \   'javascript': ['prettier-eslint'],
 \}
 
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Javascript
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:javascript_plugin_flow = 1
-autocmd BufWritePost * :ImportJSFix
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
