@@ -10,6 +10,9 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 call plug#begin('~/.vim/plugins')
 
+    " Language server client
+    Plug 'natebosch/vim-lsc'
+
     " Flutter hot reload
     Plug 'reisub0/hot-reload.vim'
 
@@ -82,6 +85,9 @@ call plug#begin('~/.vim/plugins')
     " Solarized Themes
     Plug 'altercation/vim-colors-solarized'
 
+    " Base16 theme
+    Plug 'chriskempson/base16-vim'
+
     " VSCode +Dark Theme
     Plug 'tomasiser/vim-code-dark'
 
@@ -146,6 +152,8 @@ call plug#begin('~/.vim/plugins')
 call plug#end()
 
 
+
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Editor Config
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -201,22 +209,6 @@ let g:jsx_ext_required = 0
 "      autocmd BufWritePre *.js :call ImportJS()
 " endif
 
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Async Lint Error
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:ale_sign_error = '>>'
-let g:ale_sign_warning = '--'
-let g:ale_lint_on_text_changed = 1
-let g:ale_fix_on_save = 1
-let g:ale_javascript_eslint_use_global = 1
-let g:ale_javascript_eslint_executable = 'eslint_d'
-let g:ale_fixers = {
-\   'javascript': ['prettier-eslint'],
-\}
-
-
-
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Golang
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -226,6 +218,10 @@ let g:go_fmt_command = "goimports"
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => VSCode +Dark
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" colorscheme base16-default-dark
+" let base16colorspace=256  " Access colors present in 256 colorspace
+" set termguicolors
+
 colorscheme codedark
 " set g:airline_theme = 'codedark'
 
@@ -366,3 +362,36 @@ nnoremap <silent> <leader>d :GitGutterToggle<cr>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:syntastic_swift_checkers = ['swiftpm', 'swiftlint']
 
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Async Lint Error
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:ale_completion_enabled = 1
+let g:ale_sign_error = '>>'
+let g:ale_sign_warning = '--'
+let g:ale_lint_on_text_changed = 1
+let g:ale_fix_on_save = 1
+let g:ale_javascript_eslint_use_global = 1
+let g:ale_javascript_eslint_executable = 'eslint_d'
+let g:ale_fixers = {
+\   'javascript': ['prettier-eslint'],
+\   'dart': ['dartfmt'],
+\}
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Language server client
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:lsc_server_commands = {'dart': 'dart_language_server'}
+" let g:lsc_enable_autocomplete = v:false
+let g:lsc_auto_map = {
+    \ 'GoToDefinition': '<C-b>',
+    \ 'FindReferences': 'gr',
+    \ 'NextReference': '<C-n>',
+    \ 'PreviousReference': '<C-n>',
+    \ 'FindImplementations': 'gI',
+    \ 'FindCodeActions': 'ga',
+    \ 'DocumentSymbol': 'go',
+    \ 'WorkspaceSymbol': 'gS',
+    \ 'ShowHover': 'v:true',
+    \ 'SignatureHelp': '<C-m>',
+    \ 'Completion': 'completefunc',
+    \}
