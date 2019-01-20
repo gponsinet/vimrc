@@ -10,6 +10,12 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 call plug#begin('~/.vim/plugins')
 
+    " Flutter hot reload
+    Plug 'reisub0/hot-reload.vim'
+
+    " Dart
+    Plug 'dart-lang/dart-vim-plugin'
+
     " Objective C
     Plug 'b4winckler/vim-objc'
 
