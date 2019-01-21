@@ -10,143 +10,143 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 call plug#begin('~/.vim/plugins')
 
-    " Language server client
-    Plug 'natebosch/vim-lsc'
+" Language server client
+Plug 'natebosch/vim-lsc', { 'do': './install-langserver.sh' }
 
-    " Flutter hot reload
-    Plug 'reisub0/hot-reload.vim'
+" Flutter hot reload
+Plug 'reisub0/hot-reload.vim'
 
-    " Dart
-    Plug 'dart-lang/dart-vim-plugin'
+" Dart
+Plug 'dart-lang/dart-vim-plugin'
 
-    " Objective C
-    Plug 'b4winckler/vim-objc'
+" Objective C
+Plug 'b4winckler/vim-objc'
 
-    " Editor Config
-    Plug 'editorconfig/editorconfig-vim'
+" Editor Config
+Plug 'editorconfig/editorconfig-vim'
 
-    " Fugitive
-    Plug 'tpope/vim-fugitive'
+" Fugitive
+Plug 'tpope/vim-fugitive'
 
-    " Graphql
-    Plug 'jparise/vim-graphql'
+" Graphql
+Plug 'jparise/vim-graphql'
 
-    " Swift
-    Plug 'keith/swift.vim'
+" Swift
+Plug 'keith/swift.vim'
 
-    " GoLang
-    Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+" GoLang
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 
-    " Ctags
-    Plug 'craigemery/vim-autotag'
+" Ctags
+Plug 'craigemery/vim-autotag'
 
-    " Colorizer
-    Plug 'chrisbra/colorizer'
+" Colorizer
+Plug 'chrisbra/colorizer'
 
-    " Addon Manager
-    Plug 'marcweber/vim-addon-manager'
+" Addon Manager
+Plug 'marcweber/vim-addon-manager'
 
-    " Tabline
-    Plug 'vim-airline/vim-airline'
-    Plug 'vim-airline/vim-airline-themes'
+" Tabline
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 
-    " JSON
-    Plug 'leshill/vim-json'
+" JSON
+Plug 'leshill/vim-json'
 
-    " Javscript
-    Plug 'pangloss/vim-javascript'
+" Javscript
+Plug 'pangloss/vim-javascript'
 
-    " ES7
-    " Plug 'kern/vim-es7'
+" ES7
+" Plug 'kern/vim-es7'
 
-    " JSX
-    " Plug 'maxmellon/vim-jsx-pretty'
-    Plug 'mxw/vim-jsx'
+" JSX
+" Plug 'maxmellon/vim-jsx-pretty'
+Plug 'mxw/vim-jsx'
 
-    " HTML5
-    " Plug 'othree/html5.vim'
+" HTML5
+" Plug 'othree/html5.vim'
 
-    " JS
-    "Plug 'othree/javascript-libraries-syntax.vim'
+" JS
+"Plug 'othree/javascript-libraries-syntax.vim'
 
-    " Auto import JS
-    " Plug 'trotzig/import-js
-    Plug 'Galooshi/vim-import-js', { 'do': 'yarn global add import-js' }
+" Auto import JS
+" Plug 'trotzig/import-js
+Plug 'Galooshi/vim-import-js', { 'do': 'yarn global add import-js' }
 
-    " yajs
-    " Plug 'othree/yajs.vim'
+" yajs
+" Plug 'othree/yajs.vim'
 
-    " ES
-    " Plug 'othree/es.next.syntax.vim'
+" ES
+" Plug 'othree/es.next.syntax.vim'
 
-    " Prettier
-    Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
+" Prettier
+Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 
-    " Solarized Themes
-    Plug 'altercation/vim-colors-solarized'
+" Solarized Themes
+Plug 'altercation/vim-colors-solarized'
 
-    " Base16 theme
-    Plug 'chriskempson/base16-vim'
+" Base16 theme
+Plug 'chriskempson/base16-vim'
 
-    " VSCode +Dark Theme
-    Plug 'tomasiser/vim-code-dark'
+" VSCode +Dark Theme
+Plug 'tomasiser/vim-code-dark'
 
-    " Glow in the dark
-    Plug 'kenwheeler/glow-in-the-dark-gucci-shark-bites-vim'
+" Glow in the dark
+Plug 'kenwheeler/glow-in-the-dark-gucci-shark-bites-vim'
 
-		" Challenger deep
-		Plug 'challenger-deep-theme/vim', { 'as': 'challenger-deep' }
+" Challenger deep
+Plug 'challenger-deep-theme/vim', { 'as': 'challenger-deep' }
 
-    " ES6 Scheme for neovim
-    Plug 'mhartington/oceanic-next'
+" ES6 Scheme for neovim
+Plug 'mhartington/oceanic-next'
 
-    " Nova Theme
-    Plug 'trevordmiller/nova-vim'
+" Nova Theme
+Plug 'trevordmiller/nova-vim'
 
-    " Asynchronous Lint Engine
-    Plug 'w0rp/ale'
+" Asynchronous Lint Engine
+Plug 'w0rp/ale'
 
-    " Syntastic
-    " Plug 'vim-syntastic/syntastic'
+" Syntastic
+" Plug 'vim-syntastic/syntastic'
 
-    " Find file with Ctrl+P
-    Plug 'ctrlpvim/ctrlp.vim'
+" Find file with Ctrl+P
+Plug 'ctrlpvim/ctrlp.vim'
 
-    " AG
-    Plug 'rking/ag.vim'
+" AG
+Plug 'rking/ag.vim'
 
-    " ACK
-    Plug 'mileszs/ack.vim'
+" ACK
+Plug 'mileszs/ack.vim'
 
-    " Search & Replace String with Ctrl+Shift+F
-    Plug 'dyng/ctrlsf.vim'
+" Search & Replace String with Ctrl+Shift+F
+Plug 'dyng/ctrlsf.vim'
 
-    " Multiple Cursors
-    Plug 'terryma/vim-multiple-cursors'
+" Multiple Cursors
+Plug 'terryma/vim-multiple-cursors'
 
-    " Nerd Tree
-    Plug 'scrooloose/nerdtree'
+" Nerd Tree
+Plug 'scrooloose/nerdtree'
 
-    " Auto complete
-    Plug 'valloric/youcompleteme', { 'do': './install.py --all' }
+" Auto complete
+Plug 'valloric/youcompleteme', { 'do': './install.py --all' }
 
-    " Snippets
-    Plug 'honza/vim-snippets'
+" Snippets
+Plug 'honza/vim-snippets'
 
-    " Auto Indent
-    Plug 'godlygeek/tabular'
+" Auto Indent
+Plug 'godlygeek/tabular'
 
-    " Display Trailing Whitespace
-    Plug 'bronson/vim-trailing-whitespace'
+" Display Trailing Whitespace
+Plug 'bronson/vim-trailing-whitespace'
 
-    " Surrounding
-    Plug 'tpope/vim-surround'
+" Surrounding
+Plug 'tpope/vim-surround'
 
-    " Show Git Info
-    Plug 'airblade/vim-gitgutter'
+" Show Git Info
+Plug 'airblade/vim-gitgutter'
 
-    " Eslint
-    Plug 'eslint/eslint'
+" Eslint
+Plug 'eslint/eslint'
 
 
 call plug#end()
@@ -164,35 +164,35 @@ let g:EditorConfig_exclude_patterns = ['fugitive://.*', 'scp://.*']
 " => Ctags
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:autotagExcludeSuffixes = [
-\ '.git',
-\ '.svn',
-\ '.hg',
-\ 'min',
-\ 'vendor',
-\ '\*.min.\*',
-\ '\*.map',
-\ '\*.swp',
-\ '\*.bak',
-\ '\*.pyc',
-\ '\*.class',
-\ '\*.sln',
-\ '\*.Master',
-\ '\*.csproj',
-\ '\*.csproj.user',
-\ '\*.cache',
-\ '\*.dll',
-\ '\*.pdb',
-\ 'tags',
-\ 'cscope.\*',
-\ '\*.tar.\*',
-\ 'node_modules',
-\ 'bower_components',
-\ 'dist',
-\ 'test',
-\ 'tests',
-\ '.tmp',
-\ '*bundle.*'
-\]
+      \ '.git',
+      \ '.svn',
+      \ '.hg',
+      \ 'min',
+      \ 'vendor',
+      \ '\*.min.\*',
+      \ '\*.map',
+      \ '\*.swp',
+      \ '\*.bak',
+      \ '\*.pyc',
+      \ '\*.class',
+      \ '\*.sln',
+      \ '\*.Master',
+      \ '\*.csproj',
+      \ '\*.csproj.user',
+      \ '\*.cache',
+      \ '\*.dll',
+      \ '\*.pdb',
+      \ 'tags',
+      \ 'cscope.\*',
+      \ '\*.tar.\*',
+      \ 'node_modules',
+      \ 'bower_components',
+      \ 'dist',
+      \ 'test',
+      \ 'tests',
+      \ '.tmp',
+      \ '*bundle.*'
+      \]
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -203,7 +203,7 @@ let g:javascript_plugin_flow = 1
 let g:jsx_ext_required = 0
 " TODO: import on save
 " fun! ImportJS()
-  " call :ImportJSFix
+" call :ImportJSFix
 " endfun
 " if has("autocmd")
 "      autocmd BufWritePre *.js :call ImportJS()
@@ -279,7 +279,7 @@ fun! SetupVAM()
   let &rtp.=(empty(&rtp)?'':',').c.plugin_root_dir.'/vim-addon-manager'
   if !isdirectory(c.plugin_root_dir.'/vim-addon-manager/autoload')
     execute '!git clone --depth=1 git://github.com/MarcWeber/vim-addon-manager '
-        \       shellescape(c.plugin_root_dir.'/vim-addon-manager', 1)
+          \       shellescape(c.plugin_root_dir.'/vim-addon-manager', 1)
   endif
 
   " This provides the VAMActivate command, you could be passing plugin names, too
@@ -365,7 +365,7 @@ let g:syntastic_swift_checkers = ['swiftpm', 'swiftlint']
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Async Lint Error
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:ale_completion_enabled = 1
+" let g:ale_completion_enabled = 1
 let g:ale_sign_error = '>>'
 let g:ale_sign_warning = '--'
 let g:ale_lint_on_text_changed = 1
@@ -373,25 +373,31 @@ let g:ale_fix_on_save = 1
 let g:ale_javascript_eslint_use_global = 1
 let g:ale_javascript_eslint_executable = 'eslint_d'
 let g:ale_fixers = {
-\   'javascript': ['prettier-eslint'],
-\   'dart': ['dartfmt'],
-\}
+      \   'javascript': ['prettier-eslint'],
+      \   'dart': ['dartfmt'],
+      \}
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Language server client
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:lsc_server_commands = {'dart': 'dart_language_server'}
-" let g:lsc_enable_autocomplete = v:false
+let g:lsc_server_commands = {
+      \  'dart': 'dart_language_server',
+      \ 'javascript': 'js-langserver',
+      \ 'typescript': 'javascript-typescript-langserver',
+      \ 'flow': 'flow-language-server',
+      \  'go': 'go-langserver'
+      \}
+let g:lsc_enable_autocomplete = v:true
 let g:lsc_auto_map = {
-    \ 'GoToDefinition': '<C-b>',
-    \ 'FindReferences': 'gr',
-    \ 'NextReference': '<C-n>',
-    \ 'PreviousReference': '<C-n>',
-    \ 'FindImplementations': 'gI',
-    \ 'FindCodeActions': 'ga',
-    \ 'DocumentSymbol': 'go',
-    \ 'WorkspaceSymbol': 'gS',
-    \ 'ShowHover': 'v:true',
-    \ 'SignatureHelp': '<C-m>',
-    \ 'Completion': 'completefunc',
-    \}
+      \ 'GoToDefinition': 'C-d',
+      \ 'FindReferences': 'gr',
+      \ 'NextReference': '<C-n>',
+      \ 'PreviousReference': 'gn',
+      \ 'FindImplementations': 'gI',
+      \ 'FindCodeActions': 'ga',
+      \ 'DocumentSymbol': 'go',
+      \ 'WorkspaceSymbol': 'gS',
+      \ 'ShowHover': 'v:true',
+      \ 'SignatureHelp': '<C-m>',
+      \ 'Completion': 'completefunc',
+      \}
