@@ -1,0 +1,58 @@
+{
+  "eslint.enable": true,
+  "eslint.autoFixOnSave": true,
+  "eslint.packageManager": "yarn",
+  "eslint.filetypes": ["javascript", "javascriptreact", "typescript", "typescriptreact"],
+  "eslint.run": "onType",
+  "eslint.codeAction.disableRuleComment": {
+    "enable": true,
+    "location": "sameLine"
+  },
+  "eslint.codeAction.showDocumentation": true,
+
+  "tsserver.enable": false,
+  "tsserver.locale": "",
+  "tsserver.formatOnType": true,
+  "tsserver.enableJavascript": true,
+
+  // "tsserver.implicitProjectConfig.experimentalDecorators": true,
+  // Default config
+
+  // could be 'always' 'trigger' => for specified trigger characters only 'none'
+  "coc.preferences.autoTrigger": "always",
+  // only used when autoTrigger is always
+  "coc.preferences.triggerAfterInsertEnter": false,
+  // timeout for completion
+  "coc.preferences.timeout": 500,
+  // make vim select first item on completion
+  "coc.preferences.noselect": true,
+  // when snippet activated and pumvisible, prefer complete completion.
+  "coc.preferences.preferCompleteThanJumpPlaceholder": true,
+  // enable formatOnType feature
+  "coc.preferences.formatOnType": false,
+  // command used for jump to other buffer
+  "coc.preferences.jumpCommand": "edit",
+  // executable path for https://facebook.github.io/watchman/, detected from $PATH by default
+  // "coc.preferences.watchmanPath": "",
+  // enable diagnostic
+  "coc.preferences.diagnostic.enable": true,
+  "coc.preferences.diagnostic.signOffset": 1000,
+  "coc.preferences.diagnostic.errorSign": ">>",
+  "coc.preferences.diagnostic.warningSign": "⚠",
+  "coc.preferences.diagnostic.infoSign": ">>",
+  "coc.preferences.diagnostic.hintSign": ">>",
+
+  // Language server protocol
+  "languageserver": {
+    "golang": {
+      "command": "bingo",
+      "rootPatterns": ["go.mod", ".vim/", ".git/", ".hg/"],
+      "filetypes": ["go"]
+    },
+    "typescript": {
+      "command": "javascript-typescript-stdio",
+      "filetypes": ["js", "jsx", "ts", "tsx"],
+    }
+  }
+
+}
