@@ -1,4 +1,37 @@
 {
+  "json.enable": true,
+  "json.format.enable": true,
+
+  "html.enable": true,
+  "html.filetypes": ["html", "handlebars"],
+  "html.format": true,
+  "html.validate.script": true,
+  "html.validate.styles": true,
+
+  "hightlight.disableLanguages": [],
+  "hightlight.document.enable": true,
+  "highlight.colors.enable": true,
+
+  "snippets.priority": 90,
+  //  "snippets.userSnippetsDirectory":
+  "snippets.shortcut": "S",
+  "snippets.autoTrigger": true,
+  "snippets.triggerCharacters": [],
+  "snippets.loadFromExtensions": true,
+  // "snippets.textmateSnippetsRoots": ["./snippets/vscode", "./snippets/textmate"],
+  "snippets.ultisnips.enable": true,
+  "snippets.ultisnips.usePythonx": true,
+  "snippets.ultisnips.pythonVersion": 3,
+  // "snippets.ultisnips.directories": ["./snippets/ultisnips"],
+  "snippets.snipmate.enable": true,
+  // "snippets.snippets.author":
+
+  "tsserver.enable": true,
+  "tsserver.locale": "",
+  "tsserver.formatOnType": true,
+  "tsserver.enableJavascript": true,
+  // "tsserver.implicitProjectConfig.experimentalDecorators": true,
+
   "eslint.enable": true,
   "eslint.autoFixOnSave": true,
   "eslint.packageManager": "yarn",
@@ -10,12 +43,15 @@
   },
   "eslint.codeAction.showDocumentation": true,
 
-  "tsserver.enable": false,
-  "tsserver.locale": "",
-  "tsserver.formatOnType": true,
-  "tsserver.enableJavascript": true,
+  "go.enable": true,
+  "go.goplsOptions": {
+    "completeUnimported": true,
+    "completionDocumentation": true,
+    "deepCompletion": true,
+    "staticcheck": true,
+    "usePlaceholders": true
+  },
 
-  // "tsserver.implicitProjectConfig.experimentalDecorators": true,
   // Default config
 
   // could be 'always' 'trigger' => for specified trigger characters only 'none'
@@ -41,18 +77,21 @@
   "coc.preferences.diagnostic.warningSign": "⚠",
   "coc.preferences.diagnostic.infoSign": ">>",
   "coc.preferences.diagnostic.hintSign": ">>",
+  // enable coc provide color highlight
+  "coc.preferences.colorSupport": true,
+
 
   // Language server protocol
   "languageserver": {
-    "golang": {
-      "command": "bingo",
-      "rootPatterns": ["go.mod", ".vim/", ".git/", ".hg/"],
-      "filetypes": ["go"]
-    },
-    "typescript": {
-      "command": "javascript-typescript-stdio",
-      "filetypes": ["js", "jsx", "ts", "tsx"],
-    }
+    // "golang": {
+    //   "command": "gopls",
+    //   "rootPatterns": ["go.mod"],
+    //   "filetypes": ["go"]
+    // },
+    // "typescript": {
+    //   "command": "javascript-typescript-stdio",
+    //   "filetypes": ["javascript", "javascriptreact", "typescript", "typescriptreact"]
+    // }
   }
 
 }

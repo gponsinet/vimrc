@@ -4,62 +4,35 @@
 "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+
+" .tsx
+autocmd BufEnter *.tsx set filetype=typescript.tsx
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Installation
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 call plug#begin('~/.vim/plugins')
 
-" Subvert (%s improvement)
-Plug 'tpope/vim-abolish'
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Colorscheme
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " VSCode +Dark Theme
 Plug 'tomasiser/vim-code-dark'
 
-" Vim go
-Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
-
-" Vim JSX
-Plug 'neoclide/vim-jsx-improve'
-
-" JS Import
-Plug 'Galooshi/vim-import-js', { 'do': 'npm install --global import-js' }
-
-" Vim graphql
-Plug 'jparise/vim-graphql'
-
-" Markdown
-Plug 'suan/vim-instant-markdown', { 'do': 'npm install --global instant-markdown-d' }
-
-" Coc
-Plug 'Shougo/neoinclude.vim'
-Plug 'jsfaint/coc-neoinclude'
-Plug 'Shougo/neco-vim'
-Plug 'neoclide/coc-neco'
-Plug 'neoclide/coc.nvim', {'tag': '*', 'do': { -> coc#util#install()}}
-
-" Denite
-Plug 'Shougo/denite.nvim'
-
-" CtrlP
-Plug 'ctrlpvim/ctrlp.vim'
-
-" Fast CtrlP
-Plug 'raghur/fruzzy', {'do': { -> fruzzy#install()}}
-
-" CtrlSF
-Plug 'dyng/ctrlsf.vim'
-
-" Asynchronous Lint Engine
-" Plug 'w0rp/ale'
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Helpers
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Airline
 Plug 'vim-airline/vim-airline'
 
+" Subvert (%s improvement, ex: :Subvert/child{,ren}/adult{,s}/g )
+Plug 'tpope/vim-abolish'
+
 " Show Git Info
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
-
-Plug 'google/vim-maktaba'
 
 " Nerd Tree
 Plug 'scrooloose/nerdtree'
@@ -70,57 +43,115 @@ Plug 'terryma/vim-multiple-cursors'
 " Trailing whitespaces
 Plug 'ntpeters/vim-better-whitespace'
 
-Plug 'neoclide/jsonc.vim'
-
-Plug 'joukevandermaas/vim-ember-hbs'
-
+" Editor config
 Plug 'editorconfig/editorconfig-vim'
 
-Plug 'bazelbuild/vim-bazel'
+" CtrlSF
+Plug 'dyng/ctrlsf.vim'
 
-Plug 'keith/swift.vim'
-
+" Tig
 Plug 'iberianpig/tig-explorer.vim'
+
+" CtrlP
+Plug 'ctrlpvim/ctrlp.vim'
+
+" Fast CtrlP
+Plug 'raghur/fruzzy', {'do': { -> fruzzy#install()}}
+
+" Denite
+Plug 'Shougo/denite.nvim'
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Coc
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" Coc
+Plug 'jsfaint/coc-neoinclude'
+Plug 'Shougo/neoinclude.vim'
+Plug 'Shougo/neco-vim'
+Plug 'neoclide/coc.nvim', {'tag': '*', 'do': { -> InstallPlugins()}}
+
+" Autocomplete
+" Plug 'neoclide/coc-neco'
+" Plug 'neoclide/coc-sources'
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Temp
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" Asynchronous Lint Engine
+" Plug 'w0rp/ale'
+
+
+" Plug 'google/vim-maktaba'
+
+" Plug 'neoclide/jsonc.vim'
+
+" Plug 'joukevandermaas/vim-ember-hbs'
+
+" Plug 'bazelbuild/vim-bazel'
+
+" Plug 'keith/swift.vim'
+
 
 " TS
 Plug 'leafgarland/typescript-vim'
+Plug 'ianks/vim-tsx'
+
+" Vim go
+" Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+
+" Vim JSX
+" Plug 'neoclide/vim-jsx-improve'
+
+" JS Import
+" Plug 'Galooshi/vim-import-js', { 'do': 'npm install --global import-js' }
+
+" Vim graphql
+" Plug 'jparise/vim-graphql'
+
+" Markdown
+" Plug 'suan/vim-instant-markdown', { 'do': 'npm install --global instant-markdown-d' }
 
 call plug#end()
 
+" Typescript
+" let g:tsuquyomi_completion_detail = 1
+
+" Go
+"let g:go_highlight_build_constraints = 1
+"let g:go_highlight_extra_types = 1
+"let g:go_highlight_fields = 1
+"let g:go_highlight_functions = 1
+"let g:go_highlight_methods = 1
+"let g:go_highlight_operators = 1
+"let g:go_highlight_structs = 1
+"let g:go_highlight_types = 1
+"let g:go_auto_sameids = 0
+"let g:go_auto_type_info = 0
+"
+"let g:go_fmt_command = "goimports"
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => VSCode +Dark
+" => Helpers
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:tsuquyomi_completion_detail = 1
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => VSCode +Dark
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 colorscheme codedark
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Golang
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:go_highlight_build_constraints = 1
-let g:go_highlight_extra_types = 1
-let g:go_highlight_fields = 1
-let g:go_highlight_functions = 1
-let g:go_highlight_methods = 1
-let g:go_highlight_operators = 1
-let g:go_highlight_structs = 1
-let g:go_highlight_types = 1
-let g:go_auto_sameids = 0
-let g:go_auto_type_info = 0
-
-let g:go_fmt_command = "goimports"
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Golang
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:instant_markdown_slow = 1
+" Markdown
+" let g:instant_markdown_slow = 1
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Coc
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+let g:coc_filetype_map = {
+	\ 'typescript.tsx': 'typescriptreact',
+	\ }
+
 " Use tab for trigger completion with characters ahead and navigate.
 " Use command ':verbose imap <tab>' to make sure tab is not mapped by other plugin.
 inoremap <silent><expr> <TAB>
@@ -148,6 +179,16 @@ nmap <silent> gr <Plug>(coc-references)
 let g:airline_section_error = '%{airline#util#wrap(airline#extensions#coc#get_error(),0)}'
 let g:airline_section_warning = '%{airline#util#wrap(airline#extensions#coc#get_warning(),0)}'
 
+function! InstallPlugins()
+  call coc#util#install()
+  :CocInstall coc-json coc-html coc-highlight coc-snippets coc-go coc-eslint coc-tsserver
+
+  " highlight
+  " enable highlight current symbol on CursorHold
+  autocmd CursorHold * silent call CocActionAsync('highlight')
+
+endfunction
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Denite
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -162,7 +203,6 @@ call denite#custom#map('insert', '<Up>', '<denite:move_to_previous_line>', 'nore
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:ctrlp_working_path_mode = 0
 
-let g:ctrlp_map = '<c-n>'
 map <C-p> :CtrlP<cr>
 
 let g:ctrlp_max_height = 20
@@ -258,3 +298,4 @@ nmap <C-e> :NERDTreeToggle<cr>
 let g:better_whitespace_enabled=1
 let g:strip_whitespace_on_save=1
 let g:strip_whitelines_at_eof=1
+
