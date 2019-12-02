@@ -7,6 +7,7 @@
 
 " .tsx
 autocmd BufEnter *.tsx set filetype=typescript.tsx
+autocmd BufEnter *.handlebars,*.hdbs,*.hbs,*.hb set filetype=html.handlebars
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Installation
@@ -98,6 +99,10 @@ Plug 'neoclide/coc.nvim', {'tag': '*', 'do': { -> InstallPlugins()}}
 Plug 'leafgarland/typescript-vim'
 Plug 'ianks/vim-tsx'
 
+" Protobuf
+Plug 'uarun/vim-protobuf'
+Plug 'uber/prototool'
+
 " Vim go
 " Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 
@@ -135,6 +140,10 @@ call plug#end()
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Helpers
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""" Golang
+autocmd BufWritePre *.go :CocCommand editor.action.organizeImport
+" set rtp+=$GOPATH/src/golang.org/x/lint/misc/vim
+" autocmd BufWritePost,FileWritePost *.go execute 'Lint' | cwindow
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => VSCode +Dark
@@ -182,12 +191,12 @@ let g:airline_section_warning = '%{airline#util#wrap(airline#extensions#coc#get_
 function! InstallPlugins()
   call coc#util#install()
   :CocInstall coc-json coc-html coc-highlight coc-snippets coc-go coc-eslint coc-tsserver
-
-  " highlight
-  " enable highlight current symbol on CursorHold
-  autocmd CursorHold * silent call CocActionAsync('highlight')
-
+  :!go get -u golang.org/x/lint/golint
 endfunction
+
+" highlight
+" enable highlight current symbol on CursorHold
+autocmd CursorHold * silent call CocActionAsync('highlight')
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Denite

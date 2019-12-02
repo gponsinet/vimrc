@@ -91,6 +91,11 @@
     // "typescript": {
     //   "command": "javascript-typescript-stdio",
     //   "filetypes": ["javascript", "javascriptreact", "typescript", "typescriptreact"]
+    // },
+    // "js-languageserver": {
+    //   "command": "js-langserver",
+    //   "args": ["--stdio"],
+    //   "filetypes": ["javascript", "javascriptreact", "typescript", "typescriptreact"]
     // }
   }
 
