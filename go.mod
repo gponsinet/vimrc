@@ -31,3 +31,5 @@ require (
 	gopkg.in/alecthomas/kingpin.v3-unstable v3.0.0-20180810215634-df19058c872c // indirect
 	honnef.co/go/tools v0.0.0-20190125135159-8e66885c52b0 // indirect
 )
+
+go 1.13
