@@ -70,7 +70,7 @@ Plug 'Shougo/denite.nvim'
 Plug 'jsfaint/coc-neoinclude'
 Plug 'Shougo/neoinclude.vim'
 Plug 'Shougo/neco-vim'
-Plug 'neoclide/coc.nvim', {'tag': '*', 'do': { -> InstallPlugins()}}
+Plug 'neoclide/coc.nvim', {'tag': 'release', 'do': { -> InstallPlugins()}}
 
 " Autocomplete
 " Plug 'neoclide/coc-neco'
